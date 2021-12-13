@@ -1,0 +1,5 @@
+app: midowe-web
+service: midowe-web
+
+midoweWebApp:
+  component: "@sls-next/serverless-component@3.6.0"
