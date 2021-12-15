@@ -1,0 +1,17 @@
+{
+  "name": "3bmtmvm-ejykyj",
+  "hash": "vRqw+X65VRwIlyx+Otzz4CCMKxcaVtsMk3mIgzcG9Y4=",
+  "description": "API Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "/Users/achaquisse/Lab/midowe/v4/midowe-web/.serverless_nextjs/api-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs14.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::375555142632:role/3bmtmvm-x8wmyx7"
+  },
+  "arn": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-ejykyj",
+  "region": "us-east-1"
+}
