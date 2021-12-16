@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import BrandingLogo from '../../atoms/BrandingLogo';
+import LinkButton from '../../atoms/LinkButton';
 
 const Header = () => {
   const [top, setTop] = useState(true);
@@ -24,20 +25,20 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <BrandingLogo imgSrc="/midowe.png" name="Midowe" url="/" />
 
-          {/* Site navigation */}
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
-                <Link href="/signin">
-                  <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                    Entrar
-                  </a>
-                </Link>
+                <LinkButton href="/signin" theme="tertiary">
+                  Entrar
+                </LinkButton>
               </li>
-              <li>
-                <Link href="/signup">
-                  <a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                    <span>Registar-se</span>
+
+              <li className="ml-1">
+                <LinkButton
+                  href="/signup"
+                  theme="secondary"
+                  size="sm"
+                  icon={
                     <svg
                       className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1"
                       viewBox="0 0 12 12"
@@ -48,8 +49,10 @@ const Header = () => {
                         fillRule="nonzero"
                       />
                     </svg>
-                  </a>
-                </Link>
+                  }
+                >
+                  Registar-se
+                </LinkButton>
               </li>
             </ul>
           </nav>

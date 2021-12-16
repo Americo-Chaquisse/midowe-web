@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 interface SimpleTemplateProps {
   header: JSX.Element;
-  body: JSX.Element;
+  body: JSX.Element | JSX.Element[];
 }
 
 const SimpleTemplate = ({ header, body }: SimpleTemplateProps) => {

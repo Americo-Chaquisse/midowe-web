@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Header from '../components/organisms/Header';
+import Header from '../components/molecules/Header';
 import SignUp from '../components/organisms/SignUp';
 import SimpleTemplate from '../components/templates/SimpleTemplate';
 
