@@ -1,4 +1,4 @@
-export class Campaign {
+export default class Campaign {
   constructor(
     public categoryId: string,
     public campaignId: string,
