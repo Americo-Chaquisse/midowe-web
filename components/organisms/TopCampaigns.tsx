@@ -21,7 +21,7 @@ const TopCampaigns = ({ topPerCategory }: TopCampaignsProps) => {
 
           <div className="max-w-sm md:max-w-6xl mx-auto">
             {topPerCategory.map((top, index) => {
-              return <TopCampaignList categoryCampaigns={top} />;
+              return <TopCampaignList key={index} categoryCampaigns={top} />;
             })}
           </div>
         </div>

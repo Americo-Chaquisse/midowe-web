@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CardImageTextProps {
   title: string;
@@ -23,7 +24,7 @@ const CardImageText = ({
         data-aos-delay={150 + 100 * index}
       >
         <div className="w-full aspect-w-1 aspect-h-1 bg-white rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-          <img
+          <Image
             src={image}
             alt={title}
             className="w-full h-44 object-cover group-hover:opacity-75"
