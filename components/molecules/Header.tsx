@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import BrandingLogo from '../../atoms/BrandingLogo';
-import LinkButton from '../../atoms/LinkButton';
+import BrandingLogo from '../atoms/BrandingLogo';
+import LinkButton from '../atoms/LinkButton';
 
 const Header = () => {
   const [top, setTop] = useState(true);

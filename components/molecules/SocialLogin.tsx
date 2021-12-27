@@ -1,4 +1,4 @@
-import SocialButton from '../../atoms/SocialButton';
+import SocialButton from '../atoms/SocialButton';
 
 interface SocialLoginProps {
   onSubmit: Function;

@@ -1,5 +1,5 @@
-import CategoryCampaigns from '../../../types/category-campaigns';
-import TopCampaignList from '../../molecules/TopCampaignList';
+import CategoryCampaigns from '../../types/category-campaigns';
+import TopCampaignList from '../molecules/TopCampaignList';
 
 interface TopCampaignsProps {
   topPerCategory: CategoryCampaigns[];

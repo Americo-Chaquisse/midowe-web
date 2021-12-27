@@ -1,8 +1,8 @@
-import TextLineSeparator from '../../atoms/TextLineSeparator';
-import TextLink from '../../atoms/TextLink';
-import TitleHeader from '../../atoms/TitleHeader';
-import SignUpForm from '../../molecules/SignUpForm';
-import SocialLogin from '../../molecules/SocialLogin';
+import TextLineSeparator from '../atoms/TextLineSeparator';
+import TextLink from '../atoms/TextLink';
+import TitleHeader from '../atoms/TitleHeader';
+import SignUpForm from '../molecules/SignUpForm';
+import SocialLogin from '../molecules/SocialLogin';
 
 const SignUp = () => {
   return (

@@ -1,5 +1,5 @@
-import Button from '../../atoms/Button';
-import TextInput from '../../atoms/TextInput';
+import Button from '../atoms/Button';
+import TextInput from '../atoms/TextInput';
 
 const ResetPasswordForm = () => {
   return (

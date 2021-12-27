@@ -1,13 +1,16 @@
-import Campaign from '../../../types/campaign';
-import CardImageText from '../../atoms/CardImageText';
+import Campaign from '../../types/campaign';
+import CategoryCampaigns from '../../types/category-campaigns';
+import CardImageText from '../atoms/CardImageText';
 
-interface FeaturedProps {
-  campaigns: Campaign[];
+interface TopCampaignListProps {
+  categoryCampaigns: CategoryCampaigns;
 }
-const FeaturedList = ({ campaigns }: FeaturedProps) => {
+const TopCampaignList = ({ categoryCampaigns }: TopCampaignListProps) => {
   return (
     <div className="grid mb-8 grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 justify-center">
-      {campaigns.map((campaign, index) => {
+      <h1>{categoryCampaigns.category.name}</h1>
+
+      {categoryCampaigns.campaigns.map((campaign, index) => {
         const cardFooter = (
           <div className="mt-2 text-xs font-medium text-indigo-500 flex items-center">
             <svg
@@ -49,4 +52,4 @@ const FeaturedList = ({ campaigns }: FeaturedProps) => {
   );
 };
 
-export default FeaturedList;
+export default TopCampaignList;

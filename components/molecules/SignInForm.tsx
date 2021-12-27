@@ -1,6 +1,6 @@
-import Button from '../../atoms/Button';
-import Checkbox from '../../atoms/Checkbox';
-import TextInput from '../../atoms/TextInput';
+import Button from '../atoms/Button';
+import Checkbox from '../atoms/Checkbox';
+import TextInput from '../atoms/TextInput';
 
 const SignInForm = () => {
   return (

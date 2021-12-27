@@ -1,13 +1,17 @@
 import Link from 'next/link';
-import Button from '../../atoms/Button';
-import Label from '../../atoms/Label';
-import TextInput from '../../atoms/TextInput';
-import TermsAgree from './TermsAgree';
+import Button from '../atoms/Button';
+import Label from '../atoms/Label';
+import TextInput from '../atoms/TextInput';
 
 interface SignUpFormProps {
   showTermsArea?: boolean;
   termsUrl?: string;
   privacyUrl?: string;
+}
+
+interface TermsAgreeProps {
+  termsUrl: string;
+  privacyUrl: string;
 }
 
 const SignUpForm = ({
@@ -41,6 +45,24 @@ const SignUpForm = ({
         <TermsAgree termsUrl={termsUrl} privacyUrl={privacyUrl} />
       )}
     </form>
+  );
+};
+
+const TermsAgree = ({ termsUrl, privacyUrl }: TermsAgreeProps) => {
+  return (
+    <div className="mt-3">
+      <Label>
+        Ao continuar, significa que concorda com os{' '}
+        <Link href={termsUrl}>
+          <a className="underline">termos & condições</a>
+        </Link>
+        , e a nossa{' '}
+        <Link href={privacyUrl}>
+          <a className="underline">politica de privacidade</a>
+        </Link>
+        .
+      </Label>
+    </div>
   );
 };
 

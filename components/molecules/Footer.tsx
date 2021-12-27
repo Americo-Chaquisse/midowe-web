@@ -1,4 +1,4 @@
-import TitleFooter from '../../atoms/TitleFooter';
+import TitleFooter from '../atoms/TitleFooter';
 
 const Footer = () => {
   return (

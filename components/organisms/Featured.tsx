@@ -1,6 +1,6 @@
-import { Campaign } from '../../../types/campaign';
-import CardImageText from '../../atoms/CardImageText';
-import FeaturedList from '../../molecules/FeaturedList';
+import { Campaign } from '../../types/campaign';
+import CardImageText from '../atoms/CardImageText';
+import FeaturedList from '../molecules/FeaturedList';
 
 interface FeaturedProps {
   campaigns: Campaign[];

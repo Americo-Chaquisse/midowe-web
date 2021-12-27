@@ -1,5 +1,5 @@
-import TitleHeader from '../../atoms/TitleHeader';
-import ResetPasswordForm from '../../molecules/ResetPasswordForm';
+import TitleHeader from '../atoms/TitleHeader';
+import ResetPasswordForm from '../molecules/ResetPasswordForm';
 
 const ResetPassword = () => {
   return (
