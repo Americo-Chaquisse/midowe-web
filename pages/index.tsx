@@ -1,4 +1,5 @@
 import type { GetServerSideProps, NextPage } from 'next';
+import Head from 'next/head';
 import Header from '../components/molecules/Header';
 import SimpleTemplate from '../components/templates/SimpleTemplate';
 import Campaign from '../types/campaign';
@@ -25,9 +26,9 @@ const HomePage = ({ featured, topPerCategory }: HomePageProps) => {
 
   return (
     <>
-      <head>
+      <Head>
         <title>Midowe - Doar para ajudar</title>
-      </head>
+      </Head>
       <SimpleTemplate
         header={<Header />}
         body={components}

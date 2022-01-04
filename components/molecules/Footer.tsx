@@ -11,7 +11,7 @@ const Footer = () => {
             href="https://midowe.co.mz/"
           >
             Midowe
-          </a>
+          </a>{' '}
           - {new Date().getFullYear()}. Todos os direitos reservados.
         </>
       }

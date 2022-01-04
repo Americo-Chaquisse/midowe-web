@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import BrandingLogo from '../atoms/BrandingLogo';
 import LinkButton from '../atoms/LinkButton';
+import midoweImg from '../../public/midowe.png';
 
 const Header = () => {
   const [top, setTop] = useState(true);
@@ -23,7 +24,7 @@ const Header = () => {
     >
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <BrandingLogo imgSrc="/midowe.png" name="Midowe" url="/" />
+          <BrandingLogo imgSrc={midoweImg} name="Midowe" url="/" />
 
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
