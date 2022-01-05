@@ -2,7 +2,7 @@ import CategoryCampaigns from '../../types/category-campaigns';
 import TopCampaignList from '../molecules/TopCampaignList';
 
 interface TopCampaignsProps {
-  topPerCategory: CategoryCampaigns[];
+  topPerCategory?: CategoryCampaigns[];
 }
 
 const TopCampaigns = ({ topPerCategory }: TopCampaignsProps) => {
@@ -19,11 +19,13 @@ const TopCampaigns = ({ topPerCategory }: TopCampaignsProps) => {
             </p>
           </div>
 
-          <div className="max-w-sm md:max-w-6xl mx-auto">
-            {topPerCategory.map((top, index) => {
-              return <TopCampaignList key={index} categoryCampaigns={top} />;
-            })}
-          </div>
+          {topPerCategory && (
+            <div className="max-w-sm md:max-w-6xl mx-auto">
+              {topPerCategory.map((top, index) => {
+                return <TopCampaignList key={index} categoryCampaigns={top} />;
+              })}
+            </div>
+          )}
         </div>
       </div>
     </section>

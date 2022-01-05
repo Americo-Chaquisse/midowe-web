@@ -1,10 +1,15 @@
 interface ButtonProps {
-  children: string | JSX.Element;
+  children: any;
+  size?: string;
 }
-const Button = ({ children }: ButtonProps) => {
+const Button = ({ children, size }: ButtonProps) => {
+  const getSizeClass = () => (size === 'sm' ? 'btn-sm' : '');
+
   return (
     <div className="w-full px-3">
-      <button className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full">
+      <button
+        className={`btn ${getSizeClass()} text-white bg-indigo-600 hover:bg-indigo-700 w-full`}
+      >
         {children}
       </button>
     </div>

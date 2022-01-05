@@ -20,6 +20,20 @@ class CampaignService extends _BaseService {
     }
     return response.json() as Promise<CategoryCampaigns[]>;
   }
+
+  async getByCategory(
+    categoryId: string,
+    lastCampaignId: string = '',
+    perPage: number = 10
+  ): Promise<Campaign[]> {
+    const response = await fetch(
+      `${this.serverUrl()}/campaigns/category/${categoryId}?lastCampaignId=${lastCampaignId}&perPage=${perPage}`
+    );
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json() as Promise<Campaign[]>;
+  }
 }
 
 export default CampaignService;

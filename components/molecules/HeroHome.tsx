@@ -36,7 +36,7 @@ const HeroHome = () => {
                 <div>
                   <LinkButton href="/c/register">Criar campanha</LinkButton>
                 </div>
-                <div>
+                <div className="ml-4">
                   <LinkButton href="/about" theme="secondary">
                     Saber mais
                   </LinkButton>

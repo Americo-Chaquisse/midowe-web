@@ -23,7 +23,7 @@ const TopCampaignList = ({ categoryCampaigns }: TopCampaignListProps) => {
             link={`/c/${campaign.categoryId}/${campaign.campaignId}`}
             key={index}
             index={index}
-            footer={<CampaignFooter />}
+            footer={<CampaignFooter campaign={campaign} />}
           />
         );
       })}

@@ -34,7 +34,7 @@ const Header = () => {
                 </LinkButton>
               </li>
 
-              <li className="ml-1">
+              <li className="ml-4">
                 <LinkButton
                   href="/signup"
                   theme="secondary"

@@ -16,7 +16,7 @@ const FeaturedList = ({ campaigns }: FeaturedProps) => {
             link={`/c/${campaign.categoryId}/${campaign.campaignId}`}
             key={index}
             index={index}
-            footer={<CampaignFooter />}
+            footer={<CampaignFooter campaign={campaign} />}
           />
         );
       })}

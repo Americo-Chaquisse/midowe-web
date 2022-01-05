@@ -24,3 +24,11 @@
 // AOS styles
 $aos-distance: 10px;
 @import 'node_modules/aos/src/sass/aos.scss';
+
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
