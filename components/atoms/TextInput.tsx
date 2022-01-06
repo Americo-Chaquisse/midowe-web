@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SizeType } from '../../types/base';
+import { Path, useForm, UseFormRegister, SubmitHandler } from 'react-hook-form';
 
 interface TextInputProps {
   label?: string;
@@ -11,6 +12,7 @@ interface TextInputProps {
   autoFocus?: boolean;
   required?: boolean;
   onChange?: (value: string) => void;
+  register?: any;
 }
 const TextInput = ({
   label,
@@ -22,6 +24,7 @@ const TextInput = ({
   autoFocus = false,
   required = true,
   onChange,
+  register,
 }: TextInputProps) => {
   const getSizeClass = () => (size === 'sm' ? 'input-sm' : '');
 
@@ -51,6 +54,7 @@ const TextInput = ({
         placeholder={placeholder}
         required={required}
         autoFocus={autoFocus}
+        {...register}
         onChange={(e) => {
           if (onChange != undefined) {
             onChange(e.target.value);

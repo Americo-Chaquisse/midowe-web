@@ -6,6 +6,7 @@ interface TextAreaProps {
   altLabelText?: string;
   altLabelLink?: string;
   required?: boolean;
+  register?: any;
 }
 const TextArea = ({
   label,
@@ -13,6 +14,7 @@ const TextArea = ({
   altLabelText = '',
   altLabelLink = '',
   required = false,
+  register,
 }: TextAreaProps) => {
   return (
     <div className="w-full px-3">
@@ -36,6 +38,7 @@ const TextArea = ({
         className="form-input w-full text-gray-800"
         placeholder={placeholder}
         required={required}
+        {...register}
       />
     </div>
   );

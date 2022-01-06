@@ -4,8 +4,9 @@ interface ButtonProps {
   children: any;
   size?: SizeType;
   onClick?: Function;
+  type?: 'submit' | 'reset' | 'button';
 }
-const Button = ({ children, size, onClick }: ButtonProps) => {
+const Button = ({ children, size, onClick, type = 'button' }: ButtonProps) => {
   const getSizeClass = () => (size === 'sm' ? 'btn-sm' : '');
 
   return (
@@ -17,6 +18,7 @@ const Button = ({ children, size, onClick }: ButtonProps) => {
             onClick();
           }
         }}
+        type={type}
       >
         {children}
       </button>
