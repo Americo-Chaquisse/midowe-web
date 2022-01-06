@@ -1,6 +1,6 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 interface TitleHeadeProps {
   title: string;
@@ -9,15 +9,22 @@ interface TitleHeadeProps {
 }
 
 const TitleHeader = ({ title, subtitle, back = false }: TitleHeadeProps) => {
+  const router = useRouter();
+
   return (
     <div className="mx-auto text-center pb-10 md:pb-20 flex items-center">
       {back && (
         <div>
-          <Link href="/">
-            <a className="text-indigo-600">
-              <FontAwesomeIcon icon={faArrowLeft} size="lg" /> Voltar
-            </a>
-          </Link>
+          <a
+            className="text-indigo-600"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              router.back();
+            }}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} size="lg" /> Voltar
+          </a>
         </div>
       )}
       <div className="flex-1">

@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Footer from '../../../components/molecules/Footer';
-import Header from '../../../components/molecules/Header';
-import SimpleTemplate from '../../../components/templates/SimpleTemplate';
+import Footer from '../../../../components/molecules/Footer';
+import Header from '../../../../components/molecules/Header';
+import SimpleTemplate from '../../../../components/templates/SimpleTemplate';
 
 export default function Campaign() {
   return (

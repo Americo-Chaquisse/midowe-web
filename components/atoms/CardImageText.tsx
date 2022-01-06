@@ -5,7 +5,7 @@ interface CardImageTextProps {
   title: string;
   link: string;
   image: string;
-  index: number;
+  index?: number;
   footer?: JSX.Element;
 }
 
@@ -13,7 +13,7 @@ const CardImageText = ({
   title,
   link,
   image,
-  index,
+  index = 0,
   footer,
 }: CardImageTextProps) => {
   return (

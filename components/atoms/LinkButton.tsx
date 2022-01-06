@@ -1,13 +1,12 @@
 import Link from 'next/link';
-
-type ThemeType = 'primary' | 'secondary' | 'tertiary' | 'outline';
+import { SizeType, ThemeType } from '../../types/base';
 
 interface LinkButtonProps {
   href: string;
   children: string;
   theme?: ThemeType;
   icon?: JSX.Element;
-  size?: string;
+  size?: SizeType;
 }
 
 const LinkButton = ({

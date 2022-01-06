@@ -1,14 +1,21 @@
 import Campaign from '../../types/campaign';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import CampaignFooter from './CampaignFooter';
 import LinkButton from '../atoms/LinkButton';
-import AmountPicker from '../atoms/AmountPicker';
+import AmountPicker from './AmountPicker';
 
 interface CampaignItemCardProps {
   campaign: Campaign;
 }
 const CampaignItemCard = ({ campaign }: CampaignItemCardProps) => {
+  const router = useRouter();
+
+  const handleDonate = (amount: number) => {
+    router.push(`/c/${campaign.categoryId}/${campaign.campaignId}/${amount}`);
+  };
+
   return (
     <div className="flex w-full">
       <div className="w-1/4">
@@ -47,7 +54,7 @@ const CampaignItemCard = ({ campaign }: CampaignItemCardProps) => {
             Ver campanha
           </LinkButton>
           <div className="ml-10">
-            <AmountPicker />
+            <AmountPicker onPick={handleDonate} />
           </div>
         </div>
       </div>

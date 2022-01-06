@@ -59,7 +59,7 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const category = await categoryService.getById(params?.category);
+  const category = await categoryService.getById(params?.categoryId);
 
   return {
     props: {
@@ -73,7 +73,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const categories: Category[] = await categoryService.getAll();
 
   const paths = categories.map((item) => ({
-    params: { category: item.id },
+    params: { categoryId: item.id },
   }));
 
   return { paths, fallback: false };
