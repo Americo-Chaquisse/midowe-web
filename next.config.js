@@ -5,6 +5,7 @@ module.exports = {
     domains: [
       '*.midowe.co.mz',
       'midowe-backend-prd-data.s3.af-south-1.amazonaws.com',
+      'picsum.photos',
     ],
   },
 };
