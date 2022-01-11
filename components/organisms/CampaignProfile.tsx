@@ -7,13 +7,21 @@ import Category from '../../types/category';
 import AmountPicker from '../molecules/AmountPicker';
 import CampaignImages from '../molecules/CampaignImages';
 import parse from 'html-react-parser';
+import SocialShare from '../atoms/SocialShare';
+import AvatarNamed from '../atoms/AvatarNamed';
+import { User } from '../../types/user';
 
 interface CampaignProfileProps {
   campaign: Campaign;
   category: Category;
+  user?: User;
 }
 
-const CampaignProfile = ({ campaign, category }: CampaignProfileProps) => {
+const CampaignProfile = ({
+  campaign,
+  category,
+  user,
+}: CampaignProfileProps) => {
   const router = useRouter();
 
   const handleDonate = (amount: number) => {
@@ -45,15 +53,33 @@ const CampaignProfile = ({ campaign, category }: CampaignProfileProps) => {
               </div>
 
               <div className="mt-16 mb-5">
-                <p className="text-lg mb-5 font-bold">Sobre a campanha</p>
+                <p className="text-md mb-5 font-bold">Sobre a campanha</p>
                 {parse(campaign.content)}
               </div>
 
-              {/* Author info*/}
+              <div className="mt-16 mb-5">
+                <p className="text-md mb-5 font-bold">Actividades</p>
+                {/* Donation history */}
+                <p className="mt-5 text-sm">/\/ TODO</p>
+              </div>
 
-              {/* Donation history */}
+              {user && (
+                <div className="mt-16 mb-5">
+                  <p className="text-md mb-5 font-bold">Autor / Beneficiário</p>
+                  <AvatarNamed
+                    picture={user.picture}
+                    name={user.name}
+                    headline={user.headline}
+                  />
+                </div>
+              )}
 
-              {/* Share on social networks */}
+              <div className="mt-16 mb-5">
+                <p className="text-md mb-5 font-bold">
+                  Partilhar nas redes sociais
+                </p>
+                <SocialShare />
+              </div>
             </div>
           </div>
         </div>

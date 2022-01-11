@@ -6,6 +6,7 @@ module.exports = {
       '*.midowe.co.mz',
       'midowe-backend-prd-data.s3.af-south-1.amazonaws.com',
       'picsum.photos',
+      'i1.sndcdn.com',
     ],
   },
 };

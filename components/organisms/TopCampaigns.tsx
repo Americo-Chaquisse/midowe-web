@@ -1,3 +1,5 @@
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CategoryCampaigns from '../../types/category-campaigns';
 import TopCampaignList from '../molecules/TopCampaignList';
 
@@ -24,6 +26,11 @@ const TopCampaigns = ({ topPerCategory }: TopCampaignsProps) => {
               {topPerCategory.map((top, index) => {
                 return <TopCampaignList key={index} categoryCampaigns={top} />;
               })}
+            </div>
+          )}
+          {!topPerCategory && (
+            <div className="text-center mb-10">
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
             </div>
           )}
         </div>

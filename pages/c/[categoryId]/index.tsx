@@ -1,3 +1,5 @@
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -46,7 +48,14 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
                     subtitle={category.description}
                     back={true}
                   />
-                  <CampaignList campaigns={campaigns} />
+                  {campaigns && <CampaignList campaigns={campaigns} />}
+                  {!campaigns && (
+                    <div className="text-center flex justify-center">
+                      <div className="rounded-lg bg-white px-5 py-4 shadow-lg">
+                        <div className="lds-dual-ring"></div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </section>
