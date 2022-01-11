@@ -9,7 +9,7 @@ import CampaignImages from '../molecules/CampaignImages';
 import parse from 'html-react-parser';
 import SocialShare from '../atoms/SocialShare';
 import AvatarNamed from '../atoms/AvatarNamed';
-import { User } from '../../types/user';
+import User from '../../types/user';
 import DonationList from './DonationList';
 
 interface CampaignProfileProps {

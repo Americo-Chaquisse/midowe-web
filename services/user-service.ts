@@ -1,5 +1,4 @@
-import Category from '../types/category';
-import { User } from '../types/user';
+import User from '../types/user';
 import _BaseService from './_base-service';
 
 class UserService extends _BaseService {
