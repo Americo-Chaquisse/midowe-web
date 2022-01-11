@@ -1,7 +1,23 @@
 import Category from '../types/category';
+import Donation from '../types/donation';
 import _BaseService from './_base-service';
 
 class DonationService extends _BaseService {
+  async getHistory(
+    categoryId: string,
+    campaignId: string,
+    lastTransactionId: string = '',
+    perPage: number = 10
+  ): Promise<Donation[]> {
+    const response = await fetch(
+      `${this.serverUrl()}/donations/${categoryId}/${campaignId}?lastTransactionId=${lastTransactionId}&perPage=${perPage}`
+    );
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json() as Promise<Donation[]>;
+  }
+
   async registerDonation(
     categoryId: string,
     campaignId: string,

@@ -10,6 +10,7 @@ import parse from 'html-react-parser';
 import SocialShare from '../atoms/SocialShare';
 import AvatarNamed from '../atoms/AvatarNamed';
 import { User } from '../../types/user';
+import DonationList from './DonationList';
 
 interface CampaignProfileProps {
   campaign: Campaign;
@@ -58,21 +59,21 @@ const CampaignProfile = ({
               </div>
 
               <div className="mt-16 mb-5">
-                <p className="text-md mb-5 font-bold">Actividades</p>
-                {/* Donation history */}
-                <p className="mt-5 text-sm">/\/ TODO</p>
+                <p className="text-md mb-5 font-bold">Doações recebidas</p>
+                <DonationList campaign={campaign} />
               </div>
 
-              {user && (
-                <div className="mt-16 mb-5">
-                  <p className="text-md mb-5 font-bold">Autor / Beneficiário</p>
+              <div className="mt-16 mb-5">
+                <p className="text-md mb-5 font-bold">Autor / Beneficiário</p>
+                {user && (
                   <AvatarNamed
                     picture={user.picture}
                     name={user.name}
                     headline={user.headline}
                   />
-                </div>
-              )}
+                )}
+                {!user && <div className="lds-dual-ring"></div>}
+              </div>
 
               <div className="mt-16 mb-5">
                 <p className="text-md mb-5 font-bold">

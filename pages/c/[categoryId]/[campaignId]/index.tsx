@@ -10,7 +10,7 @@ import CategoryService from '../../../../services/category-service';
 import UserService from '../../../../services/user-service';
 import Campaign from '../../../../types/campaign';
 import Category from '../../../../types/category';
-import { User } from '../../../../types/user';
+import User from '../../../../types/user';
 
 const campaignService = new CampaignService();
 const categoryService = new CategoryService();
