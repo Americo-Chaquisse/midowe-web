@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import LinkButton from '../atoms/LinkButton';
+import thankYouImg from '../../public/hands-holding-words-thank-you.png';
 
 interface DonateSuccessProps {
   amount: number;
@@ -17,7 +18,7 @@ const DonateSuccess = ({
   return (
     <div className="w-3/4 mx-auto text-center">
       <Image
-        src="/hands-holding-words-thank-you.png"
+        src={thankYouImg}
         width={600}
         height={200}
         alt=""

@@ -1,14 +1,14 @@
 {
-  "id": "E2EGIG33UXGMB7",
-  "arn": "arn:aws:cloudfront::375555142632:distribution/E2EGIG33UXGMB7",
-  "url": "https://d2wb2qnjd72jhb.cloudfront.net",
+  "id": "E1YGAXANFDOYA6",
+  "arn": "arn:aws:cloudfront::375555142632:distribution/E1YGAXANFDOYA6",
+  "url": "https://d9b4yvy5cpciq.cloudfront.net",
   "region": "us-east-1",
   "enabled": true,
   "comment": "",
   "priceClass": "PriceClass_All",
   "origins": [
     {
-      "url": "http://3bmtmvm-qnwct3c.s3.us-east-1.amazonaws.com",
+      "url": "http://3bmtmvm-8b4sir.s3.us-east-1.amazonaws.com",
       "private": true,
       "pathPatterns": {
         "_next/static/*": {
@@ -31,31 +31,6 @@
             "queryString": false
           }
         },
-        "api/*": {
-          "minTTL": 0,
-          "defaultTTL": 0,
-          "maxTTL": 31536000,
-          "allowedHttpMethods": [
-            "HEAD",
-            "DELETE",
-            "POST",
-            "GET",
-            "OPTIONS",
-            "PUT",
-            "PATCH"
-          ],
-          "forward": {
-            "headers": [
-              "Authorization",
-              "Host"
-            ],
-            "cookies": "all",
-            "queryString": true
-          },
-          "lambda@edge": {
-            "origin-request": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-ejykyj:1"
-          }
-        },
         "_next/image*": {
           "minTTL": 0,
           "defaultTTL": 60,
@@ -75,7 +50,7 @@
             ]
           },
           "lambda@edge": {
-            "origin-request": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-9csf88w:1"
+            "origin-request": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-9csf88w:22"
           }
         },
         "_next/data/*": {
@@ -95,8 +70,8 @@
             "queryString": true
           },
           "lambda@edge": {
-            "origin-request": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-aq1uzpi:1",
-            "origin-response": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-aq1uzpi:1"
+            "origin-request": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-aq1uzpi:26",
+            "origin-response": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-aq1uzpi:26"
           }
         }
       }
@@ -125,8 +100,8 @@
       "PATCH"
     ],
     "lambda@edge": {
-      "origin-request": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-aq1uzpi:1",
-      "origin-response": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-aq1uzpi:1"
+      "origin-request": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-aq1uzpi:26",
+      "origin-response": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-aq1uzpi:26"
     },
     "compress": true
   }

@@ -1,8 +1,7 @@
 {
-  "name": "3bmtmvm-knr9bs3",
-  "arn": "arn:aws:iam::375555142632:role/3bmtmvm-knr9bs3",
+  "name": "3bmtmvm-pxf2gdh",
+  "arn": "arn:aws:iam::375555142632:role/3bmtmvm-pxf2gdh",
   "service": [
-    "edgelambda.amazonaws.com",
     "lambda.amazonaws.com"
   ],
   "policy": {
@@ -30,6 +29,15 @@
         "Resource": "arn:aws:sqs:us-east-1:375555142632:3bmtmvm-8b4sir.fifo",
         "Action": [
           "sqs:SendMessage"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Resource": "arn:aws:sqs:us-east-1:375555142632:3bmtmvm-8b4sir.fifo",
+        "Action": [
+          "sqs:ReceiveMessage",
+          "sqs:DeleteMessage",
+          "sqs:GetQueueAttributes"
         ]
       }
     ]

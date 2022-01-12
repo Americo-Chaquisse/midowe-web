@@ -1,0 +1,17 @@
+{
+  "name": "3bmtmvm-8b4sir",
+  "hash": "+Ua0Ms0V7qvF75JBVwIYPAGG7lbX4HR1n6/mw9KVn6M=",
+  "description": "Next.js Regeneration Lambda",
+  "memory": 512,
+  "timeout": 10,
+  "code": "/Users/achaquisse/Lab/midowe/v4/midowe-web/.serverless_nextjs/regeneration-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs14.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::375555142632:role/3bmtmvm-pxf2gdh"
+  },
+  "arn": "arn:aws:lambda:us-east-1:375555142632:function:3bmtmvm-8b4sir",
+  "region": "us-east-1"
+}

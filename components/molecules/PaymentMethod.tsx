@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import mpesaLogoImg from '../../public/mpesa-logo.png';
 
 const PaymentMethod = () => {
   return (
@@ -8,7 +9,7 @@ const PaymentMethod = () => {
       <div className="flex items-center p-2 mt-2 border-red-200 border rounded-lg">
         <Image
           className="rounded-lg"
-          src="/mpesa-logo.png"
+          src={mpesaLogoImg}
           width={42}
           height={42}
           alt="m-pesa"

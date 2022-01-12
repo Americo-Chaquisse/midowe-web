@@ -2,8 +2,8 @@
   "name": "3bmtmvm-74ambsf",
   "arn": "arn:aws:iam::375555142632:role/3bmtmvm-74ambsf",
   "service": [
-    "lambda.amazonaws.com",
-    "edgelambda.amazonaws.com"
+    "edgelambda.amazonaws.com",
+    "lambda.amazonaws.com"
   ],
   "policy": {
     "Version": "2012-10-17",
@@ -19,10 +19,17 @@
       },
       {
         "Effect": "Allow",
-        "Resource": "arn:aws:s3:::3bmtmvm-qnwct3c/*",
+        "Resource": "arn:aws:s3:::3bmtmvm-8b4sir/*",
         "Action": [
           "s3:GetObject",
           "s3:PutObject"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Resource": "arn:aws:sqs:us-east-1:375555142632:3bmtmvm-8b4sir.fifo",
+        "Action": [
+          "sqs:SendMessage"
         ]
       }
     ]
