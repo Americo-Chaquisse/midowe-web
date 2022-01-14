@@ -29,10 +29,12 @@ const CardImageText = ({
             alt={title}
             width={500}
             height={315}
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPMyyqrBwAEawHPbJMrWQAAAABJRU5ErkJggg=="
             className="w-full h-44 object-cover group-hover:opacity-75 rounded-lg"
           />
         </div>
-        <h3 className="mt-4 text-sm text-gray-700">{title}</h3>
+        <h3 className="mt-4 text-md font-bold text-gray-600">{title}</h3>
         {footer}
       </a>
     </Link>

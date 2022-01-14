@@ -24,7 +24,7 @@ const Contact = () => {
               prontamente retornar-lhe.
             </p>
           </div>
-          <div className="w-6/12 m-auto">
+          <div className="md:w-6/12 m-auto">
             <ContactForm />
           </div>
         </div>

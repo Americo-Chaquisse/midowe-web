@@ -25,7 +25,7 @@ const HeroHome = () => {
                 data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-                Nós tormanos fácil a criação de campanhas de angariação de
+                Nós tornamos fácil a criação de campanhas de angariação de
                 fundos para apoiar iniciativas e causas sociais.
               </p>
               <div
@@ -33,10 +33,10 @@ const HeroHome = () => {
                 data-aos="zoom-y-out"
                 data-aos-delay="300"
               >
-                <div>
+                <div className="mb-4 md:mb-0">
                   <LinkButton href="/c/register">Criar campanha</LinkButton>
                 </div>
-                <div className="ml-4">
+                <div className="sm:ml-4">
                   <LinkButton href="/about" theme="secondary">
                     Saber mais
                   </LinkButton>

@@ -12,7 +12,7 @@ const Footer = () => {
           >
             Midowe
           </a>{' '}
-          - {new Date().getFullYear()}. Todos os direitos reservados.
+          - {new Date().getFullYear()}. <span className="hidden sm:inline-block">Todos os direitos reservados.</span>
         </>
       }
     />
