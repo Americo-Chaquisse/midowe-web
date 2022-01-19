@@ -47,15 +47,16 @@ const DonateForm = ({ amount, onDonate }: DonateFormProps) => {
           </span>
         )}
       </div>
+      <TextLineSeparator label="Adicionalmente" />
       <div className="flex flex-wrap -mx-3 mb-4">
         <TextInput
           type="email"
           label="Email"
+          required={false}
           placeholder="Email que iremos enviar o recibo"
-          register={register('email', { required: true })}
+          register={register('email')}
         />
       </div>
-      <TextLineSeparator label="Adicionalmente" />
       <div className="flex flex-wrap -mx-3 mb-4">
         <TextInput
           label="Seu nome"
