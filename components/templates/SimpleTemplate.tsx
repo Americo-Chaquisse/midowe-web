@@ -1,17 +1,16 @@
-import Link from 'next/link';
+import Footer from '../molecules/Footer';
+import Header from '../molecules/Header';
 
 interface SimpleTemplateProps {
-  header: JSX.Element;
-  body: JSX.Element | JSX.Element[];
-  footer?: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
-const SimpleTemplate = ({ header, body, footer }: SimpleTemplateProps) => {
+const SimpleTemplate = ({ children }: SimpleTemplateProps) => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-      {header}
-      <main className="flex-grow">{body}</main>
-      {footer}
+      <Header />
+      <main className="flex-grow">{children}</main>
+      <Footer />
     </div>
   );
 };

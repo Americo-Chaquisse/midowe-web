@@ -34,7 +34,9 @@ const HeroHome = () => {
                 data-aos-delay="300"
               >
                 <div className="mb-4 md:mb-0">
-                  <LinkButton href="/c/register">Criar campanha</LinkButton>
+                  <LinkButton href="/u/campaigns/add">
+                    Criar campanha
+                  </LinkButton>
                 </div>
                 <div className="sm:ml-4">
                   <LinkButton href="/about" theme="secondary">

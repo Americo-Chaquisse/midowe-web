@@ -75,25 +75,6 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className=" mobile-menu bg-white">
-          <ul className="">
-            <li className="active">
-              <a
-                href="index.html"
-                className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <Link href="/signup">
-                <a className="block text-sm px-2 py-4 hover:bg-indigo-600 transition duration-300">
-                  Registar-se
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </header>
   );
