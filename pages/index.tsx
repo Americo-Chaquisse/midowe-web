@@ -1,12 +1,10 @@
-import type { GetServerSideProps, GetStaticProps, NextPage } from 'next';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
-import Header from '../components/molecules/Header';
 import SimpleTemplate from '../components/templates/SimpleTemplate';
 import Campaign from '../types/campaign';
 import CampaignService from '../services/campaign-service';
 import HeroHome from '../components/molecules/HeroHome';
 import Featured from '../components/organisms/Featured';
-import Footer from '../components/molecules/Footer';
 import Contact from '../components/organisms/Contact';
 import TopCampaigns from '../components/organisms/TopCampaigns';
 import CategoryCampaigns from '../types/category-campaigns';
@@ -37,18 +35,12 @@ const HomePage = ({ featured }: HomePageProps) => {
       <Head>
         <title>Midowe - Doar para ajudar</title>
       </Head>
-      <SimpleTemplate
-        header={<Header />}
-        body={
-          <>
-            <HeroHome />
-            <Featured campaigns={featured} />
-            <TopCampaigns topPerCategory={topPerCategory} />
-            <Contact />
-          </>
-        }
-        footer={<Footer />}
-      />
+      <SimpleTemplate>
+        <HeroHome />
+        <Featured campaigns={featured} />
+        <TopCampaigns topPerCategory={topPerCategory} />
+        <Contact />
+      </SimpleTemplate>
     </>
   );
 };

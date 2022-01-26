@@ -3,7 +3,7 @@ import { SizeType, ThemeType } from '../../types/base';
 
 interface LinkButtonProps {
   href: string;
-  children: string;
+  children: any;
   theme?: ThemeType;
   icon?: JSX.Element;
   size?: SizeType;

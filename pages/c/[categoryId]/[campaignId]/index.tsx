@@ -1,8 +1,6 @@
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import Footer from '../../../../components/molecules/Footer';
-import Header from '../../../../components/molecules/Header';
 import CampaignProfile from '../../../../components/organisms/CampaignProfile';
 import SimpleTemplate from '../../../../components/templates/SimpleTemplate';
 import CampaignService from '../../../../services/campaign-service';
@@ -37,17 +35,9 @@ const CampaignPage = ({ campaign, category }: CampaignPageProps) => {
       <Head>
         <title>{campaign.title} - Midowe</title>
       </Head>
-      <SimpleTemplate
-        header={<Header />}
-        body={
-          <CampaignProfile
-            campaign={campaign}
-            category={category}
-            user={user}
-          />
-        }
-        footer={<Footer />}
-      />
+      <SimpleTemplate>
+        <CampaignProfile campaign={campaign} category={category} user={user} />
+      </SimpleTemplate>
     </>
   );
 };

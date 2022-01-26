@@ -1,11 +1,7 @@
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import TitleHeader from '../../../components/atoms/TitleHeader';
-import Footer from '../../../components/molecules/Footer';
-import Header from '../../../components/molecules/Header';
 import CampaignList from '../../../components/organisms/CampaigList';
 import SimpleTemplate from '../../../components/templates/SimpleTemplate';
 import CampaignService from '../../../services/campaign-service';
@@ -36,33 +32,27 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
       <Head>
         <title>{category.name} - Midowe</title>
       </Head>
-      <SimpleTemplate
-        header={<Header />}
-        body={
-          <>
-            <section className="bg-gradient-to-b from-gray-100 to-white">
-              <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="pt-30 pb-12 md:pt-32 md:pb-20">
-                  <TitleHeader
-                    title={category.name}
-                    subtitle={category.description}
-                    back={true}
-                  />
-                  {campaigns && <CampaignList campaigns={campaigns} />}
-                  {!campaigns && (
-                    <div className="text-center flex justify-center">
-                      <div className="rounded-lg bg-white px-5 py-4 shadow-lg">
-                        <div className="lds-dual-ring"></div>
-                      </div>
-                    </div>
-                  )}
+      <SimpleTemplate>
+        <section className="bg-gradient-to-b from-gray-100 to-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="pt-30 pb-12 md:pt-32 md:pb-20">
+              <TitleHeader
+                title={category.name}
+                subtitle={category.description}
+                back={true}
+              />
+              {campaigns && <CampaignList campaigns={campaigns} />}
+              {!campaigns && (
+                <div className="text-center flex justify-center">
+                  <div className="rounded-lg bg-white px-5 py-4 shadow-lg">
+                    <div className="lds-dual-ring"></div>
+                  </div>
                 </div>
-              </div>
-            </section>
-          </>
-        }
-        footer={<Footer />}
-      />
+              )}
+            </div>
+          </div>
+        </section>
+      </SimpleTemplate>
     </>
   );
 };
