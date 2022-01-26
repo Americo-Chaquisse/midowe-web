@@ -104,24 +104,22 @@ const Donate = ({ campaign, amount }: DonateProps) => {
                 <PaymentMethod />
               </div>
               <div className="ml-10 flex-1">
-                {isLoading && (
+                <div className={isLoading ? '' : 'hidden'}>
                   <LoadingMessage
                     title="Confirme a operação"
                     subtitle="Introduza o PIN no seu telefone para confirmar a operação"
                   />
-                )}
-                {!isLoading && (
-                  <>
-                    <DonateForm amount={amount} onDonate={handleDonate} />
-                    <div className="h-5"></div>
-                    {errorMessage && errorMessage !== '' && (
-                      <Alert>
-                        <strong className="font-bold">Erro: </strong>
-                        <span className="block sm:inline">{errorMessage}</span>
-                      </Alert>
-                    )}
-                  </>
-                )}
+                </div>
+                <div className={isLoading ? 'hidden' : ''}>
+                  <DonateForm amount={amount} onDonate={handleDonate} />
+                  <div className="h-5"></div>
+                  {errorMessage && errorMessage !== '' && (
+                    <Alert>
+                      <strong className="font-bold">Erro: </strong>
+                      <span className="block sm:inline">{errorMessage}</span>
+                    </Alert>
+                  )}
+                </div>
               </div>
             </div>
           )}

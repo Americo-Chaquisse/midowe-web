@@ -6,6 +6,7 @@ import midoweImg from '../../public/midowe.png';
 
 const Header = () => {
   const [top, setTop] = useState(true);
+  const [isMobileVisible, setMobileVisible] = useState(false);
 
   // detect whether user has scrolled the page down by 10px
   useEffect(() => {
@@ -15,6 +16,18 @@ const Header = () => {
     window.addEventListener('scroll', scrollHandler);
     return () => window.removeEventListener('scroll', scrollHandler);
   }, [top]);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (isMobileVisible) {
+        setMobileVisible(false);
+      }
+    });
+  });
+
+  const toggleMobileMenu = () => {
+    setMobileVisible(!isMobileVisible);
+  };
 
   return (
     <header
@@ -27,14 +40,17 @@ const Header = () => {
           <BrandingLogo imgSrc={midoweImg} name="Midowe" url="/" />
 
           <div className="sm:hidden flex items-center">
-            <button className="outline-none mobile-menu-button">
+            <button
+              className="outline-none mobile-menu-button"
+              onClick={toggleMobileMenu}
+            >
               <svg
                 className=" w-6 h-6 text-gray-500 hover:text-indigo-600 "
                 x-show="!showMenu"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
@@ -75,25 +91,26 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className=" mobile-menu bg-white">
-          <ul className="">
-            <li className="active">
-              <a
-                href="index.html"
-                className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <Link href="/signup">
-                <a className="block text-sm px-2 py-4 hover:bg-indigo-600 transition duration-300">
-                  Registar-se
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {isMobileVisible && (
+          <div className="text-center mobile-menu bg-white">
+            <ul className="">
+              <li className="active">
+                <Link href="/signin">
+                  <a className="block text-sm px-2 py-4 font-semibold">
+                    Entrar
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/signup">
+                  <a className="block text-sm px-2 py-4 font-semibold hover:text-indigo-600 transition duration-300">
+                    Registar-se
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </header>
   );

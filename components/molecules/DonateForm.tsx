@@ -4,7 +4,7 @@ import Button from '../atoms/Button';
 import TextArea from '../atoms/TextArea';
 import TextInput from '../atoms/TextInput';
 import TextLineSeparator from '../atoms/TextLineSeparator';
-import { Path, useForm, UseFormRegister, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 export interface DonateFormValues {
   phone: number;
