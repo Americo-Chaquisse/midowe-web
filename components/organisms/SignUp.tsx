@@ -29,7 +29,7 @@ const SignUp = () => {
             <TextLink
               text="Já possui uma conta?"
               linkName="Entrar"
-              href="/login"
+              href="/signin"
             />
           </div>
         </div>

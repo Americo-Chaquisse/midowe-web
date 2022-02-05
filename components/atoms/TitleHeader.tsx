@@ -12,7 +12,7 @@ const TitleHeader = ({ title, subtitle, back = false }: TitleHeadeProps) => {
   const router = useRouter();
 
   return (
-    <div className="mx-auto text-center pb-10 md:pb-16 flex items-center">
+    <div className="mx-auto text-center pb-10 flex items-center">
       {back && (
         <div>
           <a

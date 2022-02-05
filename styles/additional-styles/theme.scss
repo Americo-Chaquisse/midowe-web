@@ -2,17 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.form-input,
-.form-textarea,
-.form-multiselect,
-.form-select,
-.form-checkbox,
-.form-radio {
-  &:focus {
-    box-shadow: none !important;
-  }
-}
-
 // Hamburger button
 .hamburger {
   svg > * {

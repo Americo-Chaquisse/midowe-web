@@ -18,8 +18,14 @@ Amplify.configure({
         'openid',
         'aws.cognito.signin.user.admin',
       ],
-      redirectSignIn: 'http://localhost:3000/console/',
-      redirectSignOut: 'http://localhost:3000/',
+      redirectSignIn:
+        process.env.NODE_ENV == 'development'
+          ? 'http://localhost:3000/u/'
+          : 'https://midowe.co.mz/u/',
+      redirectSignOut:
+        process.env.NODE_ENV == 'development'
+          ? 'http://localhost:3000'
+          : 'https://midowe.co.mz',
       clientId: '7eiboa6nqubohrd53bc8kskrvo',
       responseType: 'token',
     },
