@@ -39,7 +39,9 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
       >
         {icon}
       </Flex>
-      <Text fontWeight={600}>{title}</Text>
+      <Text fontWeight={600} color={'purple.600'}>
+        {title}
+      </Text>
       <Text color={'gray.600'}>{text}</Text>
     </Stack>
   );
@@ -49,7 +51,7 @@ export default function HowItWorks() {
   return (
     <>
       <Container maxW="container.lg" p={20} textAlign="center">
-        <Heading color={'purple.600'}>Sem fins lucrativos</Heading>
+        <Heading size="lg">Sem fins lucrativos</Heading>
         <Text mt={5} color={'purple.800'}>
           O Midowe é uma plataforma da comunidade para a comunidade, sem fins
           lucrativos. As taxas minimas cobradas cobrem apenas os custos das

@@ -1,4 +1,4 @@
-import Footer from '../../layout/footer';
+import { Footer } from '../../layout/footer';
 
 interface SimpleTemplateProps {
   children: JSX.Element | JSX.Element[];

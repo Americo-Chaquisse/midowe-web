@@ -16,10 +16,7 @@ type FeaturedCardProps = {
   categories: CategoryType[] | undefined;
 };
 
-export default function FeaturedCard({
-  campaign,
-  categories,
-}: FeaturedCardProps) {
+export function FeaturedCard({ campaign, categories }: FeaturedCardProps) {
   const getCtegoryName = (categoryId: string) => {
     if (categories != undefined && categories.length > 0) {
       const filtered = categories.filter((item) => item.id === categoryId);

@@ -16,7 +16,7 @@ import Image from 'next/image';
 import { appName } from '../../helpers/constants';
 import midoweImg from '../../public/midowe.png';
 
-export default function Header() {
+export function Header() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (

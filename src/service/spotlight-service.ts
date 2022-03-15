@@ -11,4 +11,14 @@ function useFeaturedCampaigns() {
   };
 }
 
-export { useFeaturedCampaigns };
+function useTrendingCampaigns() {
+  const { data, error } = useSWR('/spotlight/trending', httpGet);
+
+  return {
+    campaigns: data,
+    isLoading: !error && !data,
+    isError: error,
+  };
+}
+
+export { useFeaturedCampaigns, useTrendingCampaigns };

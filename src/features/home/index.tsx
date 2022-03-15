@@ -1,10 +1,11 @@
 import Welcome from './welcome';
 import Featured from './featured';
 import Categories from './categories';
-import SectionTrending from './section-trending';
 import Newsletter from './newsletter';
 import ContactUs from './contact-us';
 import HowItWorks from './how-it-works';
+import Trending from './trending';
+import CallToAction from './call-to-action';
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <Welcome />
       <Featured />
       <Categories />
-      <SectionTrending />
+      <Trending />
+      <CallToAction />
       <HowItWorks />
       <Newsletter />
       <ContactUs />
