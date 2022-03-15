@@ -2,7 +2,6 @@ import {
   Box,
   chakra,
   Container,
-  Link,
   Stack,
   Text,
   useColorModeValue,
@@ -13,6 +12,7 @@ import midoweImg from '../../../public/midowe.png';
 import { ReactNode } from 'react';
 import { appName } from '../../helpers/constants';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SocialButton = ({
   children,
@@ -65,9 +65,9 @@ const Footer = () => {
           alt={appName}
         />
         <Stack direction={'row'} spacing={6} fontSize={12}>
-          <Link href={'#'}>Sobre</Link>
-          <Link href={'#'}>Termos e Condições</Link>
-          <Link href={'#'}>Politica de Privacidade</Link>
+          <Link href="/about">Sobre</Link>
+          <Link href="/terms">Termos e Condições</Link>
+          <Link href="/privacy">Politica de Privacidade</Link>
         </Stack>
       </Container>
 

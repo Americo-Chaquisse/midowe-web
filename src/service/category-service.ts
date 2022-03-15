@@ -15,10 +15,10 @@ function useCategoryById(categoryId: string) {
   const { data, error } = useSWR(`/categories/${categoryId}`, httpGet);
 
   return {
-    categories: data,
+    category: data,
     isLoading: !error && !data,
     isError: error,
   };
 }
 
-export { useCategories };
+export { useCategories, useCategoryById };

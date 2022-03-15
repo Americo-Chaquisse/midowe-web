@@ -6,37 +6,35 @@ import {
   Button,
   Stack,
   Collapse,
-  Link,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Container,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
 import { appName } from '../../helpers/constants';
-import midoweImg from '../../public/midowe.png';
+import midoweImg from '../../../public/midowe.png';
+import Link from 'next/link';
 
 export function Header() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
-      <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
-        justifyContent={'center'}
+    <Box
+      borderBottom={1}
+      borderStyle={'solid'}
+      borderColor={useColorModeValue('gray.200', 'gray.900')}
+    >
+      <Container
+        as={Stack}
+        maxW={'6xl'}
+        py={4}
+        direction={{ base: 'column', md: 'row' }}
+        spacing={4}
+        align={{ base: 'center', md: 'center' }}
       >
-        <Flex
-          width={{ md: '100%', lg: '90%' }}
-          maxW={'1400px'}
-          align={'center'}
-        >
+        <Flex justify={{ base: 'center', md: 'space-between' }} w="full">
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
@@ -61,13 +59,17 @@ export function Header() {
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}
             >
-              <Image
-                src={midoweImg}
-                className="h-10"
-                width={110}
-                height={37}
-                alt={appName}
-              />
+              <Link href="/" passHref>
+                <a style={{ cursor: 'pointer' }}>
+                  <Image
+                    src={midoweImg}
+                    className="h-10"
+                    width={110}
+                    height={37}
+                    alt={appName}
+                  />
+                </a>
+              </Link>
             </Text>
 
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -87,11 +89,11 @@ export function Header() {
             <Button colorScheme="black">Registar-se</Button>
           </Stack>
         </Flex>
-      </Flex>
 
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
+      </Container>
     </Box>
   );
 }
@@ -104,18 +106,20 @@ const DesktopNav = () => {
     <Stack direction={'row'} spacing={4} alignItems={'center'}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Link
-            p={2}
-            href={navItem.href ?? '#'}
-            fontSize={'sm'}
-            fontWeight={500}
-            color={linkColor}
-            _hover={{
-              textDecoration: 'none',
-              color: linkHoverColor,
-            }}
-          >
-            {navItem.label}
+          <Link href={navItem.href} passHref>
+            <Box
+              p={2}
+              fontSize={'sm'}
+              fontWeight={500}
+              color={linkColor}
+              cursor={'pointer'}
+              _hover={{
+                textDecoration: 'none',
+                color: linkHoverColor,
+              }}
+            >
+              {navItem.label}
+            </Box>
           </Link>
         </Box>
       ))}
