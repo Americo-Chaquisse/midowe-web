@@ -104,9 +104,9 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={'row'} spacing={4} alignItems={'center'}>
-      {NAV_ITEMS.map((navItem) => (
+      {NAV_ITEMS.map((navItem: NavItem) => (
         <Box key={navItem.label}>
-          <Link href={navItem.href} passHref>
+          <Link href={`${navItem.href}`} passHref>
             <Box
               p={2}
               fontSize={'sm'}
