@@ -43,3 +43,8 @@ yarn-error.log*
 # Intelij IDEA
 .idea
 *.iml
+
+#IAC
+.iac/.terraform
+.iac/terraform.tfstate*
+.next-tf

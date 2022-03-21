@@ -17,7 +17,7 @@ type FeaturedCardProps = {
 };
 
 export function FeaturedCard({ campaign, categories }: FeaturedCardProps) {
-  const getCtegoryName = (categoryId: string) => {
+  const getCategoryName = (categoryId: string) => {
     if (categories != undefined && categories.length > 0) {
       const filtered = categories.filter((item) => item.id === categoryId);
       if (filtered.length > 0) {
@@ -38,7 +38,7 @@ export function FeaturedCard({ campaign, categories }: FeaturedCardProps) {
             <Image
               transform="scale(1.0)"
               src={campaign.profileImage}
-              alt="some text"
+              alt=""
               objectFit="cover"
               width="100%"
               height={230}
@@ -57,13 +57,13 @@ export function FeaturedCard({ campaign, categories }: FeaturedCardProps) {
             colorScheme="purple"
             cursor="pointer"
           >
-            <Link href={campaign.categoryId}>
-              {getCtegoryName(campaign.categoryId)}
+            <Link href={`/${campaign.categoryId}`}>
+              {getCategoryName(campaign.categoryId)}
             </Link>
           </Tag>
         </HStack>
         <Heading fontSize="xl" marginTop="2">
-          <Link href={`${campaign.categoryId}/${campaign.campaignId}`}>
+          <Link href={`/${campaign.categoryId}/${campaign.campaignId}`}>
             {campaign.title}
           </Link>
         </Heading>

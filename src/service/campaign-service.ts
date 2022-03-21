@@ -1,6 +1,7 @@
 import { CampaignType } from './../helpers/types';
 import useSWRInfinite from 'swr/infinite';
 import { httpGet } from '../helpers/httpClient';
+import useSWR from 'swr';
 
 function useCampaignsByCategory(categoryId: string, limit: number) {
   const getKey = (
@@ -29,4 +30,17 @@ function useCampaignsByCategory(categoryId: string, limit: number) {
   };
 }
 
-export { useCampaignsByCategory };
+function useCampaignById(categoryId: string, campaignId: string) {
+  const { data, error } = useSWR(
+    `/campaigns/${categoryId}/${campaignId}`,
+    httpGet
+  );
+
+  return {
+    campaign: data,
+    isLoading: !error && !data,
+    isError: error,
+  };
+}
+
+export { useCampaignsByCategory, useCampaignById };
