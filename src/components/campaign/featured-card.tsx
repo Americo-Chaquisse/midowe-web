@@ -51,12 +51,7 @@ export function FeaturedCard({ campaign, categories }: FeaturedCardProps) {
           </Link>
         </Box>
         <HStack spacing={2} marginTop={4}>
-          <Tag
-            size={'md'}
-            variant="solid"
-            colorScheme="purple"
-            cursor="pointer"
-          >
+          <Tag size={'md'} variant="outline" cursor="pointer">
             <Link href={`/${campaign.categoryId}`}>
               {getCategoryName(campaign.categoryId)}
             </Link>
@@ -67,9 +62,6 @@ export function FeaturedCard({ campaign, categories }: FeaturedCardProps) {
             {campaign.title}
           </Link>
         </Heading>
-        <Text as="p" fontSize="md" marginTop="2">
-          {trimDescription(campaign.description)}
-        </Text>
         <BlogAuthor
           name={campaign.userData.fullName}
           pictureUrl={campaign.userData.pictureUrl}
@@ -103,7 +95,7 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
   }
 
   return (
-    <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
+    <HStack marginTop="4" spacing="2" display="flex" alignItems="center">
       <Image
         borderRadius="full"
         boxSize="40px"

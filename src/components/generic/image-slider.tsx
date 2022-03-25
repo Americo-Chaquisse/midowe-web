@@ -33,12 +33,7 @@ export default function ImageSlider({ cards }: ImageSliderProps) {
   const side = useBreakpointValue({ base: '30%', md: '40px' });
 
   return (
-    <Box
-      position={'relative'}
-      height={'600px'}
-      width={'full'}
-      overflow={'hidden'}
-    >
+    <Box position={'relative'} width={'full'} overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"

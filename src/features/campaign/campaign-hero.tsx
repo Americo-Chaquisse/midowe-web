@@ -1,20 +1,21 @@
 import {
   Box,
-  Button,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Text,
   Container,
+  Divider,
   Flex,
-  GridItem,
-  HStack,
   Stack,
   Tag,
-  VStack,
 } from '@chakra-ui/react';
 import { CampaignType } from '../../helpers/types';
 import { Heading } from '@chakra-ui/react';
 import ImageSlider from '../../components/generic/image-slider';
 import Link from 'next/link';
 import { useCategoryById } from '../../service/category-service';
-import { BiRightArrowAlt, BiShieldAlt2 } from 'react-icons/bi';
+import { BiShieldAlt2 } from 'react-icons/bi';
 import { SocialButton } from '../../components/generic/social-button';
 import {
   FaFacebook,
@@ -22,6 +23,11 @@ import {
   FaLinkedin,
   FaWhatsapp,
 } from 'react-icons/fa';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import HTMLRenderer from 'react-html-renderer';
+import Disqus from 'disqus-react';
+import DonationRequest from './donation-request';
+import { appUrl } from '../../helpers/constants';
 
 type CampaignHeroProps = {
   campaign: CampaignType;
@@ -29,64 +35,99 @@ type CampaignHeroProps = {
 export default function CampaignHero({ campaign }: CampaignHeroProps) {
   const { category } = useCategoryById(campaign.categoryId);
 
+  const disqusShortname = 'midowe';
+  const disqusConfig = {
+    url: appUrl,
+    identifier: campaign.campaignId,
+    title: campaign.title,
+  };
+
   return (
     <Container maxW="container.xl" p={20}>
-      <Flex w="full">
-        <Box>
-          <Stack alignItems={'start'} mt={8} mr={20}>
-            <Heading py={3}>{campaign.title}</Heading>
+      <Breadcrumb
+        spacing="8px"
+        separator={<ChevronRightIcon color="gray.500" />}
+      >
+        <BreadcrumbItem>
+          <BreadcrumbLink as={Link} href="/">
+            Home
+          </BreadcrumbLink>
+        </BreadcrumbItem>
 
-            <Button
-              rounded={'full'}
-              bg={'purple.400'}
-              color={'white'}
-              _hover={{
-                bg: 'purple.600',
-              }}
-              px={10}
-              rightIcon={<BiRightArrowAlt style={{ marginLeft: '15px' }} />}
-            >
-              Doar agora
-            </Button>
-          </Stack>
+        <BreadcrumbItem>
+          {category && (
+            <BreadcrumbLink as={Link} href={`/${category.id}`}>
+              {category.name}
+            </BreadcrumbLink>
+          )}
+        </BreadcrumbItem>
 
-          <Stack direction={'row'} spacing={6} mt={10}>
-            <SocialButton label={'Facebook'} href={'#'}>
-              <FaFacebook />
-            </SocialButton>
-            <SocialButton label={'WhatsApp'} href={'#'}>
-              <FaWhatsapp />
-            </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
-              <FaInstagram />
-            </SocialButton>
-            <SocialButton label={'LinkedIn'} href={'#'}>
-              <FaLinkedin />
-            </SocialButton>
-          </Stack>
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink>{`Campanha: #${campaign.campaignId}`}</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
 
-          <HStack mt={8}>
-            <Tag size={'md'} variant="solid" colorScheme="green">
-              <BiShieldAlt2 style={{ marginRight: ' 5px' }} /> Verificado
-            </Tag>
+      <Heading py={5}>
+        {campaign.title}{' '}
+        <Tag
+          size={'sm'}
+          variant="solid"
+          colorScheme="blue"
+          verticalAlign={'middle'}
+        >
+          <BiShieldAlt2 style={{ marginRight: ' 5px' }} /> Verificado
+        </Tag>
+      </Heading>
 
-            {category && (
-              <Tag size={'md'} cursor="pointer">
-                <Link
-                  href={`/${campaign.categoryId}`}
-                >{`Categoria: ${category.name}`}</Link>
-              </Tag>
-            )}
-          </HStack>
-        </Box>
-        <Box w={'55%'}>
+      <Flex w="full" mt={10}>
+        <Box w={'65%'}>
           <ImageSlider
             cards={[campaign.profileImage, ...campaign.additionalImages]}
           />
         </Box>
+        <Box pl={10}>
+          <DonationRequest />
+        </Box>
       </Flex>
 
-      <p>TODO: Campaign body</p>
+      <Flex w={'full'} direction="column" alignItems="center" mt={20} mb={5}>
+        <Text color={'gray.700'}>Compartilhar nas redes sociais:</Text>
+        <Stack direction={'row'} spacing={6} mt={5}>
+          <SocialButton label={'Facebook'} href={'#'}>
+            <FaFacebook />
+          </SocialButton>
+          <SocialButton label={'WhatsApp'} href={'#'}>
+            <FaWhatsapp />
+          </SocialButton>
+          <SocialButton label={'Instagram'} href={'#'}>
+            <FaInstagram />
+          </SocialButton>
+          <SocialButton label={'LinkedIn'} href={'#'}>
+            <FaLinkedin />
+          </SocialButton>
+        </Stack>
+      </Flex>
+
+      <Stack textAlign={'center'} mt={20} mb={5}>
+        <Heading size={'sm'}>Sobre</Heading>
+        <Divider />
+      </Stack>
+
+      <Container>
+        <HTMLRenderer html={campaign.description} />
+      </Container>
+
+      <Stack textAlign={'center'} mt={20}>
+        <Heading size={'sm'}>Comentários</Heading>
+        <Divider />
+      </Stack>
+
+      <Container mt={16}>
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
+      </Container>
     </Container>
   );
 }

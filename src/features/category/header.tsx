@@ -1,6 +1,11 @@
-import { ArrowBackIcon, ArrowLeftIcon } from '@chakra-ui/icons';
-import { Button, Container } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Container,
+} from '@chakra-ui/react';
+import Link from 'next/link';
 import { CategoryType } from '../../helpers/types';
 
 type HeaderProps = {
@@ -8,13 +13,22 @@ type HeaderProps = {
 };
 
 export function Header({ category }: HeaderProps) {
-  const router = useRouter();
-
   return (
     <Container maxW="container.xl" px={20} pt={20}>
-      <Button onClick={() => router.back()} leftIcon={<ArrowBackIcon />}>
-        {category.name}
-      </Button>
+      <Breadcrumb
+        spacing="8px"
+        separator={<ChevronRightIcon color="gray.500" />}
+      >
+        <BreadcrumbItem>
+          <BreadcrumbLink as={Link} href="/">
+            Home
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          {category && <BreadcrumbLink>{category.name}</BreadcrumbLink>}
+        </BreadcrumbItem>
+      </Breadcrumb>
     </Container>
   );
 }
