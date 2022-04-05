@@ -24,6 +24,7 @@ import {
   FaWhatsapp,
 } from 'react-icons/fa';
 import { ChevronRightIcon } from '@chakra-ui/icons';
+// @ts-ignore
 import HTMLRenderer from 'react-html-renderer';
 import Disqus from 'disqus-react';
 import DonationRequest from './donation-request';

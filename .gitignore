@@ -48,3 +48,5 @@ yarn-error.log*
 .iac/.terraform
 .iac/terraform.tfstate*
 .next-tf
+
+build

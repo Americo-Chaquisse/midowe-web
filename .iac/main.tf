@@ -6,6 +6,14 @@ terraform {
     }
   }
 
+  backend "s3" {
+    bucket         = "exodus-tf-state"
+    key            = "midowe-tf-backed/terraform.tfstate"
+    encrypt        = true
+    region         = "af-south-1"
+    dynamodb_table = "exodus-tf-state-locking"
+  }
+
   required_version = ">= 1.1.0"
 }
 
@@ -13,6 +21,7 @@ terraform {
 # (Should be close to the location of your viewers)
 provider "aws" {
   region = "af-south-1"
+  profile = "default"
 }
 
 # Provider used for creating the Lambda@Edge function which must be deployed
